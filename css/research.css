@@ -19,6 +19,7 @@
   grid-template-columns: 110px 1fr auto;
   gap: var(--space-lg);
   align-items: center;
+  cursor: pointer;
   transition: background var(--t-fast) var(--ease);
 }
 

@@ -1,14 +1,11 @@
 /* =========================================================
    DATA.JS
-   Fuente de contenido del portal. Edita estos arreglos para
-   publicar nuevos artículos, investigaciones o fotos de
-   concursos sin tocar el HTML ni la lógica de renderizado.
+   CONTENIDO IMG PARA ARTÍCULOS, INVESTIGACIONES Y CONCURSOS
    ========================================================= */
 
-/**
- * Artículos y publicaciones.
- * category se usa también para el filtro de la sección.
- */
+/* -------------------------------------------
+                DATA ARTÍCULOS
+ -------------------------------------------- */
 const ARTICLES = [
   {
     category: "Clínica",
@@ -60,10 +57,10 @@ const ARTICLES = [
   },
 ];
 
-/**
- * Resultados de investigaciones realizadas o en curso por la sociedad.
- * status admite: "curso" | "publicado"
- */
+/* -------------------------------------------
+                DATA INVESTIGACIONES
+ -------------------------------------------- */
+
 const RESEARCH = [
   {
     status: "publicado",
@@ -82,14 +79,6 @@ const RESEARCH = [
     link: "#",
   },
   {
-    status: "publicado",
-    title: "Complicaciones tempranas en cirugía de columna en pacientes mayores de 70 años",
-    meta: "Estudio retrospectivo · 2024 · Congreso Nacional SCISSORS",
-    excerpt:
-      "Análisis de 96 procedimientos con enfoque en factores de riesgo perioperatorio modificables.",
-    link: "#",
-  },
-  {
     status: "curso",
     title: "Uso de plasma rico en plaquetas en tendinopatía rotuliana crónica",
     meta: "Ensayo clínico · Inicio 2025 · Fase de reclutamiento",
@@ -99,49 +88,90 @@ const RESEARCH = [
   },
 ];
 
-/**
- * Fotos de congresos y concursos en los que la sociedad ha participado.
- * Coloca las imágenes reales en /img/concursos/ y reemplaza `image: null`
- * por la ruta correspondiente, por ejemplo:
- *   image: "img/concursos/congreso-nacional-2025.jpg"
- * Mientras no exista la imagen, se muestra un marcador visual de la
- * misma paleta del sitio para que el diseño quede listo para producción.
- */
+/* -------------------------------------------
+                DATA CURSOS
+ -------------------------------------------- */
+const COURSES = [
+  {
+    label: "Curso taller",
+    title: "SKILL LAB TRAUMA",
+    subtitle: "Principios básicos en osteosíntesis",
+    organizer: "Traumatología Hospital Santa Bárbara",
+    location: "Auditorio DEI HSB",
+    date: "24 al 27 de septiembre de 2026",
+    time: "16:30 a 19:30",
+    description:
+      "Una introducción práctica al mundo de la reducción y fijación para quienes quieren fortalecer sus bases en traumatología y ortopedia.",
+    audience:
+      "Residentes, médicos generales, internos del área de salud y estudiantes.",
+    certification: "Certificación avalada por 25 horas académicas",
+    pricing: [
+      "Bs 70 · Residentes y médicos generales",
+      "Bs 40 · Internos y estudiantes",
+    ],
+    phones: "75436374 o 63759145",
+    whatsapp: "59175436374",
+    images: [
+      {
+        src: "img/cursos/img-01.jpg",
+        alt: "Afiche promocional del curso Skill Lab Trauma",
+      },
+      {
+        src: "img/cursos/img-02.jpg",
+        alt: "Cronograma de los días 1 y 2 del curso Skill Lab Trauma",
+      },
+      {
+        src: "img/cursos/img-03.jpg",
+        alt: "Cronograma de los días 3 y 4 del curso Skill Lab Trauma",
+      },
+    ],
+  },
+];
+
+/* -------------------------------------------
+                DATA CONCURSOS
+ -------------------------------------------- */
 const GALLERY = [
   {
     title: "Congreso Nacional de Ortopedia",
     year: "2025",
     size: "wide",
-    image: "img/concursos/congreso-nacional-2025.svg",
+    image: "img/concursos/img4.jpg",
+    description: "Evento realizado en la ciudad de México - Centro de Ortopedia abc",
   },
   {
     title: "Concurso de Casos Clínicos",
     year: "2025",
     size: "tall",
-    image: "img/concursos/concurso-casos-2025.svg",
+    image: "img/concursos/img3.jpg",
+    description: "Evento realizado en ... 1",
   },
   {
     title: "Jornada de Cirugía de Columna",
     year: "2024",
     size: "normal",
-    image: "img/concursos/jornada-columna-2024.svg",
+    image: "img/concursos/img1.jpg",
+    description: "Evento realizado en ... 2",
   },
   {
     title: "Encuentro Latinoamericano SLAOT",
     year: "2024",
     size: "normal",
-    image: "img/concursos/encuentro-slaot-2024.svg",
+    image: "img/concursos/img2.jpg",
+    description: "Evento realizado en ... 3",
   },
   {
     title: "Premio a la Mejor Investigación",
     year: "2024",
     size: "normal",
-    image: "img/concursos/premio-investigacion-2024.svg",
+    image: "img/concursos/img0.jpg",
+    description: "Evento realizado en ... 4",
   },
   {
     title: "Taller de Artroscopía de Rodilla",
     year: "2023",
     size: "wide",
-    image: "img/concursos/taller-artroscopia-2023.svg",
+    image: "img/concursos/img0.jpg",
+    description: "Evento realizado en ... 5",
   },
 ];

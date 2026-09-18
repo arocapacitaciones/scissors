@@ -12,7 +12,10 @@ body {
   overflow-x: hidden;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: var(--font-display);
   color: var(--ivory);
   font-weight: 600;
@@ -132,13 +135,12 @@ textarea:focus-visible {
 .rope-divider {
   height: 10px;
   width: 100%;
-  background-image: repeating-linear-gradient(
-    115deg,
-    var(--gold-dim) 0px,
-    var(--gold) 4px,
-    var(--wood-light) 4px,
-    var(--wood) 8px
-  );
+  margin-bottom: 15px;
+  background-image: repeating-linear-gradient(115deg,
+      var(--gold-dim) 0px,
+      var(--gold) 4px,
+      var(--wood-light) 4px,
+      var(--wood) 8px);
   opacity: 0.55;
   border-radius: var(--radius-round);
   mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
@@ -171,23 +173,40 @@ textarea:focus-visible {
   transform: translateY(0);
 }
 
-.reveal-stagger > * {
+.reveal-stagger>* {
   opacity: 0;
   transform: translateY(24px);
   transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
 }
 
-.reveal-stagger.is-visible > * {
+.reveal-stagger.is-visible>* {
   opacity: 1;
   transform: translateY(0);
 }
 
-.reveal-stagger.is-visible > *:nth-child(1) { transition-delay: 0.05s; }
-.reveal-stagger.is-visible > *:nth-child(2) { transition-delay: 0.15s; }
-.reveal-stagger.is-visible > *:nth-child(3) { transition-delay: 0.25s; }
-.reveal-stagger.is-visible > *:nth-child(4) { transition-delay: 0.35s; }
-.reveal-stagger.is-visible > *:nth-child(5) { transition-delay: 0.45s; }
-.reveal-stagger.is-visible > *:nth-child(6) { transition-delay: 0.55s; }
+.reveal-stagger.is-visible>*:nth-child(1) {
+  transition-delay: 0.05s;
+}
+
+.reveal-stagger.is-visible>*:nth-child(2) {
+  transition-delay: 0.15s;
+}
+
+.reveal-stagger.is-visible>*:nth-child(3) {
+  transition-delay: 0.25s;
+}
+
+.reveal-stagger.is-visible>*:nth-child(4) {
+  transition-delay: 0.35s;
+}
+
+.reveal-stagger.is-visible>*:nth-child(5) {
+  transition-delay: 0.45s;
+}
+
+.reveal-stagger.is-visible>*:nth-child(6) {
+  transition-delay: 0.55s;
+}
 
 /* ---- Sección base ---- */
 .section {

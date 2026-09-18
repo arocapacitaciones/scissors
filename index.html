@@ -30,6 +30,7 @@
           <li><a href="#nosotros">Nosotros</a></li>
           <li><a href="#articulos">Artículos</a></li>
           <li><a href="#investigaciones">Investigaciones</a></li>
+          <li><a href="#cursos">Cursos</a></li>
           <li><a href="#concursos">Concursos</a></li>
           <li><a href="#unete">Contacto</a></li>
         </ul>
@@ -188,14 +189,10 @@
             <p>Contenido clínico y técnico escrito por miembros de la sociedad.</p>
           </div>
         </div>
-
+        <!-- CATEGORIAS -->
         <div class="filter-bar" data-filter-bar role="group" aria-label="Filtrar artículos por categoría"></div>
-
+        <!-- ARTICULOS -->
         <div class="article-grid" data-articles-grid></div>
-
-        <div class="articles__more">
-          <a href="#" class="btn btn-ghost">Ver todas las publicaciones</a>
-        </div>
       </div>
     </section>
 
@@ -212,6 +209,19 @@
       </div>
     </section>
 
+    <!-- ============ CURSOS ============ -->
+    <section class="section courses" id="cursos">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Formación continua</span>
+          <h2>Cursos y talleres próximos</h2>
+          <p>Actividades prácticas para fortalecer la formación en ortopedia y traumatología.</p>
+        </div>
+
+        <div class="courses-list" data-courses-list></div>
+      </div>
+    </section>
+
     <!-- ============ CONCURSOS ============ -->
     <section class="section" id="concursos">
       <div class="container">
@@ -222,12 +232,9 @@
             académicas.</p>
         </div>
 
+        <!-- DATA IMG -->
         <div class="gallery-grid" data-gallery-grid></div>
 
-        <p class="gallery__note">
-          ✎ Espacio preparado para fotografías reales — colócalas en <code>/img/concursos/</code> y enlázalas desde
-          <code>js/data.js</code>.
-        </p>
       </div>
     </section>
 
@@ -351,29 +358,37 @@
       </div>
 
       <div class="footer-bottom">
-        <span>© <span data-current-year>2026</span> Sociedad SCISSORS. Todos los derechos reservados.</span>
-        <span>Diseñado para el avance de la ortopedia boliviana</span>
+        <small><i>SCISSORS © 2026 | Developed by AroSystems | v1.0.0</i></small>
       </div>
     </div>
   </footer>
 
-  <!-- ============ LIGHTBOX (galería) ============ -->
+  <!-- ============ AVISO CURSO DESTACADO ============ -->
+  <div class="course-notice" data-course-notice aria-hidden="true">
+    <div class="course-notice__panel" role="dialog" aria-modal="true" aria-labelledby="course-notice-title">
+      <button class="course-notice__close" data-course-notice-close aria-label="Cerrar aviso">&times;</button>
+      <div class="course-notice__logo">
+        <img src="img/logo-sello.png" alt="Logo de la sociedad SCISSORS">
+      </div>
+      <span class="course-notice__eyebrow">Nueva actividad disponible</span>
+      <h2 id="course-notice-title">SKILL LAB TRAUMA</h2>
+      <p>Curso taller sobre principios básicos en osteosíntesis.</p>
+      <strong>24 al 27 de septiembre · Auditorio DEI HSB</strong>
+      <a class="btn btn-primary" href="#cursos" data-course-notice-link>Ver curso e inscripciones</a>
+    </div>
+  </div>
+
+  <!-- ============ MODAL LIGHTBOX (galería) ============ -->
   <div class="lightbox" data-lightbox aria-hidden="true">
     <button class="lightbox__close" data-lightbox-close aria-label="Cerrar">&times;</button>
+    <button class="lightbox__nav lightbox__nav--prev" data-lightbox-prev aria-label="Imagen anterior">&#8592;</button>
     <div class="lightbox__panel">
-      <span class="lightbox__icon">
-        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6">
-          <rect x="3" y="5" width="18" height="14" rx="2" />
-          <circle cx="8.5" cy="10" r="1.6" />
-          <path d="M21 15l-5.5-5-4 4-2-2L3 17" />
-        </svg>
-      </span>
       <h3 data-lightbox-title>Título</h3>
       <p data-lightbox-year>Edición</p>
-      <p style="margin-top:1rem; font-size:0.8rem; color:var(--text-faint);">
-        Reemplaza este marcador con la fotografía real del evento en <code>js/data.js</code>.
-      </p>
+      <img class="lightbox__image" data-lightbox-image src="" alt="">
+      <p class="lightbox__detail" data-lightbox-detail>Detalle</p>
     </div>
+    <button class="lightbox__nav lightbox__nav--next" data-lightbox-next aria-label="Imagen siguiente">&#8594;</button>
   </div>
 
   <!-- ============ VOLVER ARRIBA ============ -->
