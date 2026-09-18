@@ -1,0 +1,44 @@
+/* =========================================================
+   ANIMATIONS.CSS
+   ========================================================= */
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.back-to-top {
+  position: fixed;
+  right: var(--space-md);
+  bottom: var(--space-md);
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--bg-panel);
+  border: var(--border-gold);
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 90;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity var(--t-med) var(--ease), transform var(--t-med) var(--ease), visibility var(--t-med) var(--ease);
+}
+
+.back-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  background: var(--gold);
+  color: var(--wood-dark);
+}
+
+/* Contador animado dentro de .stat__number mientras carga */
+.stat__number.is-counting {
+  animation: fade-in 0.4s var(--ease);
+}

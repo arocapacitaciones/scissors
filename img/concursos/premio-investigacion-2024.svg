@@ -1,0 +1,17 @@
+<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+  <rect width="500" height="500" fill="#f39c12"/>
+  <rect width="500" height="500" fill="url(#grad5)" opacity="0.8"/>
+  <defs>
+    <linearGradient id="grad5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f1c40f;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d68910;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <polygon points="250,80 320,200 450,200 360,280 390,400 250,330 110,400 140,280 50,200 180,200" fill="#fff" opacity="0.2"/>
+  <circle cx="250" cy="250" r="70" fill="#fff" opacity="0.1"/>
+  <text x="250" y="210" font-size="36" font-weight="bold" fill="#fff" text-anchor="middle">Premio a la</text>
+  <text x="250" y="270" font-size="36" font-weight="bold" fill="#fff" text-anchor="middle">Mejor</text>
+  <text x="250" y="330" font-size="36" font-weight="bold" fill="#fff" text-anchor="middle">Investigación</text>
+  <text x="250" y="380" font-size="22" fill="#fff" text-anchor="middle">2024</text>
+  <text x="250" y="460" font-size="18" fill="#fef9e7" text-anchor="middle">⭐ Reconocimiento científico</text>
+</svg>

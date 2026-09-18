@@ -1,0 +1,209 @@
+/* =========================================================
+   BASE.CSS — tipografía global y utilidades reutilizables
+   ========================================================= */
+
+body {
+  background: var(--bg-primary);
+  color: var(--ivory-dim);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  color: var(--ivory);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: 0.01em;
+}
+
+p {
+  max-width: 62ch;
+}
+
+::selection {
+  background: var(--gold-dim);
+  color: var(--bg-primary);
+}
+
+/* Foco visible accesible */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--teal-bright);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+/* ---- Contenedor central ---- */
+.container {
+  width: min(100% - 3rem, var(--container-max));
+  margin-inline: auto;
+}
+
+/* ---- Etiqueta "eyebrow" con estilo grabado ---- */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2xs);
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.eyebrow::before {
+  content: "";
+  width: 22px;
+  height: 1px;
+  background: var(--gold);
+  display: inline-block;
+}
+
+/* ---- Encabezado de sección estándar ---- */
+.section-head {
+  max-width: 640px;
+  margin-bottom: var(--space-lg);
+}
+
+.section-head h2 {
+  font-size: var(--fs-display-lg);
+  margin-top: var(--space-sm);
+}
+
+.section-head p {
+  margin-top: var(--space-sm);
+  color: var(--text-muted);
+  font-size: var(--fs-body-lg);
+}
+
+/* ---- Botones ---- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2xs);
+  padding: 0.85em 1.8em;
+  border-radius: var(--radius-round);
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: transform var(--t-fast) var(--ease), box-shadow var(--t-fast) var(--ease), background var(--t-fast) var(--ease), color var(--t-fast) var(--ease);
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: linear-gradient(160deg, var(--gold-bright), var(--gold-dim));
+  color: var(--wood-dark);
+  box-shadow: 0 10px 30px -10px rgba(201, 162, 75, 0.55);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 34px -10px rgba(201, 162, 75, 0.7);
+}
+
+.btn-ghost {
+  border: var(--border-gold);
+  color: var(--ivory);
+}
+
+.btn-ghost:hover {
+  background: rgba(201, 162, 75, 0.1);
+  transform: translateY(-2px);
+}
+
+.btn-teal {
+  background: var(--teal-bright);
+  color: var(--bg-primary);
+}
+
+.btn-teal:hover {
+  background: #63c2a6;
+  transform: translateY(-2px);
+}
+
+/* ---- Divisor tipo "cuerda trenzada" (motivo del sello) ---- */
+.rope-divider {
+  height: 10px;
+  width: 100%;
+  background-image: repeating-linear-gradient(
+    115deg,
+    var(--gold-dim) 0px,
+    var(--gold) 4px,
+    var(--wood-light) 4px,
+    var(--wood) 8px
+  );
+  opacity: 0.55;
+  border-radius: var(--radius-round);
+  mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+}
+
+/* ---- Insignia circular "sello de cera" ---- */
+.seal-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 50%;
+  border: 1.5px solid var(--gold);
+  color: var(--gold);
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+/* ---- Texto con animación de revelado ---- */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+}
+
+.reveal-stagger.is-visible > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-stagger.is-visible > *:nth-child(1) { transition-delay: 0.05s; }
+.reveal-stagger.is-visible > *:nth-child(2) { transition-delay: 0.15s; }
+.reveal-stagger.is-visible > *:nth-child(3) { transition-delay: 0.25s; }
+.reveal-stagger.is-visible > *:nth-child(4) { transition-delay: 0.35s; }
+.reveal-stagger.is-visible > *:nth-child(5) { transition-delay: 0.45s; }
+.reveal-stagger.is-visible > *:nth-child(6) { transition-delay: 0.55s; }
+
+/* ---- Sección base ---- */
+.section {
+  padding: var(--space-2xl) 0;
+  position: relative;
+}
+
+.section-alt {
+  background: var(--bg-secondary);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}

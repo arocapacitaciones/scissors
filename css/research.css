@@ -1,0 +1,97 @@
+/* =========================================================
+   RESEARCH.CSS — resultados de investigaciones
+   ========================================================= */
+
+.research-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background: rgba(201, 162, 75, 0.15);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: var(--border-hairline);
+}
+
+.research-item {
+  background: var(--bg-panel);
+  padding: var(--space-md) var(--space-lg);
+  display: grid;
+  grid-template-columns: 110px 1fr auto;
+  gap: var(--space-lg);
+  align-items: center;
+  transition: background var(--t-fast) var(--ease);
+}
+
+.research-item:hover {
+  background: var(--bg-panel-hover);
+}
+
+.research-item__status {
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.4em 0;
+  text-align: center;
+  border-radius: var(--radius-round);
+  border: 1px solid currentColor;
+}
+
+.research-item__status--curso {
+  color: var(--gold-bright);
+}
+
+.research-item__status--publicado {
+  color: var(--teal-bright);
+}
+
+.research-item__body h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--ivory);
+}
+
+.research-item__meta {
+  margin-top: var(--space-3xs);
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  color: var(--text-faint);
+  letter-spacing: 0.03em;
+}
+
+.research-item__excerpt {
+  margin-top: var(--space-2xs);
+  font-size: var(--fs-small);
+  color: var(--text-muted);
+  max-width: 60ch;
+}
+
+.research-item__link {
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  color: var(--gold);
+  white-space: nowrap;
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--t-fast) var(--ease);
+}
+
+.research-item__link:hover {
+  border-color: var(--gold);
+}
+
+@media (max-width: 780px) {
+  .research-item {
+    grid-template-columns: 1fr;
+    gap: var(--space-2xs);
+    text-align: left;
+  }
+
+  .research-item__status {
+    justify-self: start;
+    padding-inline: var(--space-sm);
+  }
+
+  .research-item__link {
+    margin-top: var(--space-2xs);
+  }
+}

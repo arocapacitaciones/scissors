@@ -1,0 +1,79 @@
+/* =========================================================
+   VARIABLES.CSS
+   Sistema de diseño — Sociedad SCISSORS
+   Paleta extraída del sello: bronce, madera de nogal, negro
+   textil, más un teal clínico como contraste de "salud".
+   ========================================================= */
+
+:root {
+  /* ---- Color: base ---- */
+  --bg-primary: #0b0d0f;          /* negro textil de fondo */
+  --bg-secondary: #121412;        /* secciones alternas */
+  --bg-panel: #181a17;            /* tarjetas / paneles */
+  --bg-panel-hover: #1f2220;
+
+  /* ---- Color: madera (sello) ---- */
+  --wood-dark: #2a1712;
+  --wood: #3e2419;
+  --wood-light: #5c3a28;
+
+  /* ---- Color: bronce / oro (metal del sello) ---- */
+  --gold: #c9a24b;
+  --gold-bright: #e8c873;
+  --gold-dim: #8c6239;
+  --bronze: #a97c50;
+
+  /* ---- Color: teal clínico (contraste "salud") ---- */
+  --teal: #17332c;
+  --teal-bright: #4fa88f;
+  --teal-soft: #2a4a42;
+
+  /* ---- Color: texto ---- */
+  --ivory: #f3ecdd;
+  --ivory-dim: #cfc6b3;
+  --text-muted: #8f8a7c;
+  --text-faint: #5c584e;
+
+  /* ---- Tipografía ---- */
+  --font-display: "Cinzel", serif;              /* grabado / sello */
+  --font-accent: "Cormorant Garamond", serif;    /* citas, acentos */
+  --font-body: "Source Sans 3", "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;      /* datos, fechas, cifras */
+
+  /* ---- Escala tipográfica ---- */
+  --fs-display-xl: clamp(2.6rem, 6vw, 5.2rem);
+  --fs-display-lg: clamp(2rem, 4vw, 3.4rem);
+  --fs-display-md: clamp(1.5rem, 2.6vw, 2.1rem);
+  --fs-body-lg: 1.15rem;
+  --fs-body: 1rem;
+  --fs-small: 0.875rem;
+  --fs-micro: 0.72rem;
+
+  /* ---- Espaciado ---- */
+  --space-3xs: 0.25rem;
+  --space-2xs: 0.5rem;
+  --space-xs: 0.75rem;
+  --space-sm: 1rem;
+  --space-md: 1.75rem;
+  --space-lg: 3rem;
+  --space-xl: 5rem;
+  --space-2xl: 8rem;
+
+  /* ---- Layout ---- */
+  --container-max: 1200px;
+  --radius-sm: 4px;
+  --radius-md: 10px;
+  --radius-round: 999px;
+
+  /* ---- Bordes / sombras ---- */
+  --border-hairline: 1px solid rgba(201, 162, 75, 0.18);
+  --border-gold: 1px solid rgba(201, 162, 75, 0.55);
+  --shadow-soft: 0 20px 50px -20px rgba(0, 0, 0, 0.65);
+  --shadow-gold-glow: 0 0 60px rgba(201, 162, 75, 0.15);
+
+  /* ---- Transiciones ---- */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --t-fast: 0.2s;
+  --t-med: 0.45s;
+  --t-slow: 0.9s;
+}

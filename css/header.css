@@ -1,0 +1,181 @@
+/* =========================================================
+   HEADER.CSS — cabecera y navegación
+   ========================================================= */
+
+.site-header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 100;
+  padding: var(--space-md) 0;
+  transition: padding var(--t-med) var(--ease), background var(--t-med) var(--ease), border-color var(--t-med) var(--ease);
+  border-bottom: 1px solid transparent;
+}
+
+.site-header.is-scrolled {
+  padding: var(--space-xs) 0;
+  background: rgba(11, 13, 15, 0.88);
+  backdrop-filter: blur(14px);
+  border-bottom-color: rgba(201, 162, 75, 0.15);
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+}
+
+/* ---- Marca ---- */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.brand__logo {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid rgba(201, 162, 75, 0.4);
+  transition: transform var(--t-med) var(--ease);
+}
+
+.brand:hover .brand__logo {
+  transform: rotate(8deg);
+}
+
+.brand__text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.brand__name {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  letter-spacing: 0.14em;
+  color: var(--ivory);
+}
+
+.brand__sub {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+/* ---- Navegación ---- */
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.nav-list {
+  display: flex;
+  gap: var(--space-md);
+}
+
+.nav-list a {
+  position: relative;
+  font-size: var(--fs-small);
+  letter-spacing: 0.04em;
+  color: var(--ivory-dim);
+  padding-block: var(--space-3xs);
+  transition: color var(--t-fast) var(--ease);
+}
+
+.nav-list a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 1px;
+  background: var(--gold);
+  transition: width var(--t-med) var(--ease);
+}
+
+.nav-list a:hover,
+.nav-list a.is-active {
+  color: var(--gold-bright);
+}
+
+.nav-list a:hover::after,
+.nav-list a.is-active::after {
+  width: 100%;
+}
+
+.nav-cta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+/* ---- Botón menú móvil ---- */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  z-index: 110;
+}
+
+.nav-toggle span {
+  display: block;
+  height: 1.5px;
+  width: 100%;
+  background: var(--ivory);
+  transition: transform var(--t-med) var(--ease), opacity var(--t-med) var(--ease);
+}
+
+.nav-toggle.is-open span:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+.nav-toggle.is-open span:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle.is-open span:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+@media (max-width: 860px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  .main-nav {
+    position: fixed;
+    inset: 0;
+    background: var(--bg-primary);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-lg);
+    transform: translateX(100%);
+    transition: transform var(--t-med) var(--ease);
+  }
+
+  .main-nav.is-open {
+    transform: translateX(0);
+  }
+
+  .nav-list {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-md);
+  }
+
+  .nav-list a {
+    font-size: 1.2rem;
+  }
+
+  .brand__sub {
+    display: none;
+  }
+}
