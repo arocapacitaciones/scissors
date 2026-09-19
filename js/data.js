@@ -109,8 +109,8 @@ const COURSES = [
       "Bs 70 · Residentes y médicos generales",
       "Bs 40 · Internos y estudiantes",
     ],
-    phones: "75436374 o 63759145",
-    whatsapp: "59175436374",
+    phones: "75436375 o 63759145",
+    whatsapp: "59175436375",
     images: [
       {
         src: "img/cursos/img-01.jpg",
